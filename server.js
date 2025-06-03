@@ -33,10 +33,11 @@ app.use(flash())
 
 // setting express-session middleware
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: 'minha-chave-secreta-fixa', // string fixa para o secret
     resave: false,
     saveUninitialized: false,
 }))
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize())
